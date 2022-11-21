@@ -19,10 +19,12 @@ export function rangeSum(start, end) {
   и верните количество потребовавшихся итераций (т.е. сколько раз пришлось выполнить деление).
 */
 export function iterationCount(a) {
+    let i = 0;
     while (a > 0.1) {
         a /= 2;
+        i++;
     }
-    return a;
+    return i;
 }
 
 /*
@@ -43,7 +45,7 @@ export function symbolsReplace(message) {
         new_message += message[i * 3 + 1];
         new_message += '_';
         i++;
-    } while (i * 3 < message.length);
+    } while ((i + 1) * 3 < message.length);
 
     new_message += message.substring(i * 3 + 1, message.length);
 
