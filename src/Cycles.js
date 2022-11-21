@@ -6,7 +6,7 @@
 export function rangeSum(start, end) {
     let sum = 0;
     for (; start <= end; start++) {
-        if (start % 2 == 0) {
+        if (start % 2 === 0) {
             sum += start;
         }
     }
@@ -39,18 +39,13 @@ export function symbolsReplace(message) {
     }
 
     do {
-        new_message += message[i];
-        new_message += message[i + 1];
+        new_message += message[i * 3];
+        new_message += message[i * 3 + 1];
         new_message += '_';
         i++;
     } while (i * 3 < message.length);
-    {
-        new_message += message[i];
-        new_message += message[i + 1];
-        new_message += '_';
-        i++;
-    }
-    new_message += message.substring(i + 1, message.length);
+
+    new_message += message.substring(i * 3 + 1, message.length);
 
     return new_message;
 }
